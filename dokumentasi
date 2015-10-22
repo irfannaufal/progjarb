@@ -1,0 +1,35 @@
+Dalam tugas chat saya menggunakan tipe protocol TCP/IP dengan IP versi 4 dan saya memakai 4 protokol yaitu:
+1.	Login
+2.	Sendto
+3.	Sendall
+4.	List 
+Agar kita bisa melakukan bisa melakukan chat kita harus memasukkan alamat host dan port yang sama di client dengan 
+di server setelah itu kita bisa melakukan protokol yang pertama
+1.	LOGIN
+Disini kita membuat fungsi yang bernama login fungsi itu saya simbolkan dengan angka “1” ketika client mengetik 1
+maka akan muncul tuliskan nama anda.ketika client memasukkan nama maka fungsi yang berada di server mengecek ke data 
+global yang dicopy jika nama yang barusan dimasukan oleh client dengan nama yang lain maka server akan mengirim pesan 
+ke klient bahwa username sudah dipakai jika tidak maka  disimpan nama tersebut 
+ 
+2.	List
+Disini kita membuat fungsi yang untuk menyimpan nama client mana saja yang sedang online disini saya membuat fungsi 
+yang bernama anggota didalam fungsi anggota mendata siapa saja yang sedang online hal itu dicocokin apabila socket 
+sama dengan value maka tampilkan nama anggota yang sedang online hal itu terus dilakukan sebanyak jumlah yang ada
+di dalam socket list.setelah itu semua data tadi dikirim ke client yang request 
+ 
+3.	Sendall
+Disini kita membuat fungsi yang digunakan untuk mengirim pesan kesemua client yang sedang online jadi ketika salah 
+satu client mengirim pesan dengan kata kunci sendall maka akan masuk kedalam fungsi broadcast.didalam fungsi 
+broadcast ini pesan yang dikirmc client akan dikirim ke semua client yang sedang online menggunakan daftar 
+yang ada di dalam socket list yang menyimpan data siapa saja client yang sedang online.sehingga alurnya client
+mengetik sendall itu sebagai tanda bahwa ia memanggil fungsi broadcast setelah menulis pesan.data yang ditulis
+itu dikirim ke server dari server akan mengirim ke semua daftar client yang sedang online berdasar data di socket_list
+ 
+4.	Sendto
+Didalam fungsi sendto ini hampir sama eperti sendall Cuma disini kita hanya mengirim ke salah satu client saja.
+difungsi ini saya hanya bisa mengirim pesan ke satu client saja tidak bisa lebih.didalam fungsi sendto ini 
+ada 2 parameter yaitu dikirim kesiapa dan pesannya jadi pemakaiannya client mengetik sendto(spasi)client yang 
+akan di ajak chat(spasi)pesan.dengan seperti itu server mengartikan bahwa client merequest fungsi sendto dikirim 
+ke subjek siapa dengan pesan seperti ini.didalam server maka serever akan memecah menjadi  indikator fungsi sendto 
+terus subjek yang akan dikirim.subjek itu akan dicocokan dengan data yang disimpan di Map setelah itu server akan
+mengirim ke subjek yang dituju tersebut
