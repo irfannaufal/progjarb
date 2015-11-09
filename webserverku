@@ -19,17 +19,31 @@ while True:
     if match:
         angle = match.group(1)
         print angle
-        if angle == "91":
+        if angle == "1":
             f=open("history.jpg","r+")
             ambil_data=f.read()
             f.close()
             csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
             print 'kirim sukses'
-	elif angle == "92":
+	elif angle == "2":
 	    f=open("gambar.jpg","r+")
             ambil_data=f.read()
             f.close()
             csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+        elif angle == "3":
+            f=open("aku.jpg","r+")
+            ambil_data=f.read()
+            f.close()
+            csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+        elif angle == "3":
+            f=open("kamu.jpg","r+")
+            ambil_data=f.read()
+            f.close()
+            csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+            
        
     else:
         print "Returning 404"
