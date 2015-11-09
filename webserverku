@@ -44,7 +44,6 @@ while True:
             csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
             print 'kirim sukses'
             
-       
     else:
         print "Returning 404"
         csock.sendall("HTTP/1.0 404 Not Found\r\n")
