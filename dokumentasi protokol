@@ -1,0 +1,26 @@
+1.login
+ server menampilkan tulisan ketikan 1 untuk login
+ client masukkan 1
+ server menampilkan masukkan nama anda
+ jika berhasil maka akan muncul tulisan ayo chat dan dibawahnya muncul <nama anda> says
+ jika tidak memasukkan 1 maka akan langsung keluar dari sistem
+ 
+ 2.list
+ ketik 2
+ jika berhasil maka akan akan muncul daftar yang online
+ jika gagal karena belum login maka akan muncul perintah silahkan login dulu
+ jika gagal karena salah penulisan perintah maka akan muncul invalid command
+ 
+ 3.sendtall
+ ketik sendall<spasi>pesan yang akan dikirim
+ jika berhasil maka pesan yang akan dikirim ke semua client yang online
+ jika gagal karena salah penulisan perintah maka akan muncul invalid command
+ jika gaagl karena belum login maka akan muncul perintah silahkan login dulu
+ 
+ 4.sendto
+ ketik sendto<spasi>tujuan yang akan diajak chat<spsasi>pesan yang akan dikirim
+ jika berhasil maka pesan yang dikirim akan sampai ke client yang dituju
+ jika gagal karena salah penulisan perintah maka akan muncul invalid command
+ jika gaagl karena belum login maka akan muncul perintah silahkan login dulu
+ 
+ 
