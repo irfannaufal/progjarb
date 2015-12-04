@@ -1,0 +1,51 @@
+import socket
+import re
+
+
+host = ''
+port = 18894
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+sock.bind((host, port))
+sock.listen(1)
+
+
+while True:
+    csock, caddr = sock.accept()
+    print "Connection from: " + `caddr`
+    req = csock.recv(1024)
+    print req
+    match = re.match('GET /gambar\?a=(\d+)\sHTTP/1', req)
+    if match:
+        angle = match.group(1)
+        print angle
+        if angle == "1":
+            f=open("history.jpg","r+")
+            ambil_data=f.read()
+            f.close()
+            csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+	elif angle == "2":
+	    f=open("gambar.jpg","r+")
+            ambil_data=f.read()
+            f.close()
+            csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+        elif angle == "3":
+            f=open("aku.jpg","r+")
+            ambil_data=f.read()
+            f.close()
+            csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+        elif angle == "3":
+            f=open("kamu.jpg","r+")
+            ambil_data=f.read()
+            f.close()
+            csock.sendall("HTTP/1.1 200 OK \r\n\r\n%s"%ambil_data)
+            print 'kirim sukses'
+            
+       
+    else:
+        print "Returning 404"
+        csock.sendall("HTTP/1.0 404 Not Found\r\n")
+    csock.close()
